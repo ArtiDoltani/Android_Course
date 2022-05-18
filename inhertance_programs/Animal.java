@@ -1,15 +1,33 @@
 package inhertance_programs;
 public class Animal {
-    String name;
+   private String name;
     public void eat(){
         System.out.println("Animal can eat");
-    }    }
+    }   
+
+
+    /**
+     * @return String return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+}
 class dog extends Animal{
     public void display(){
 
         System.out.println("=====>This is Dog Class<========= ");
-        name="jack";
-        System.out.println("I am "+ name);  }
+        setName("jack");
+        System.out.println("I am "+ getName());  }
 
 
     public void bark(){
@@ -24,9 +42,9 @@ class dog extends Animal{
 class Cat extends Animal{
 
     public void display(){
-        name="buzzy";
+       setName("buzzy") ;
         System.out.println("=====>This is Cat Class<========= ");
-        System.out.println("I am "+ name);  }
+        System.out.println("I am "+ getName());  }
     public void eat(){
         super.eat();
 
@@ -49,6 +67,9 @@ class Cat extends Animal{
         buzzy.display();
         buzzy.eat();
 }
+
+
+  
 
 }
 
