@@ -46,7 +46,7 @@ class Cat extends Animal{
         System.out.println("=====>This is Cat Class<========= ");
         System.out.println("I am "+ getName());  }
     public void eat(){
-        super.eat();
+        //super.eat();
 
         System.out.println("Cat can eat food");
     }
@@ -60,12 +60,14 @@ class Cat extends Animal{
     public static void main(String[] args) {
         dog jack=new dog();
         Cat buzzy=new Cat();
-        jack.display();
-        jack.eat();
-        jack.bark();
-        buzzy.meow();
-        buzzy.display();
-        buzzy.eat();
+        Animal animal = new Cat();
+        animal.eat();
+        // jack.display();
+        // jack.eat();
+        // jack.bark();
+        // buzzy.meow();
+        // buzzy.display();
+        // buzzy.eat();
 }
 
 
