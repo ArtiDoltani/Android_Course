@@ -6,6 +6,7 @@ public class Person {
   private String address;
   private int Phone_num;
   private String email;
+  
 @Override
 public String toString() {
     
@@ -72,21 +73,67 @@ public String toString() {
 
 class Student extends Person{
 
-  final  String status1="freshman";
-  final  String status2="junior";
-  final  String status="Senior";
+
+    private final String status;
+  public Student(String status){
+    this.status=status;
+
+
+  }
+  public String getStatus() {
+    return status;
+}
   @Override
 public String toString() {
     
     return "This is Student class";
 }
-
+    
 
 }
 class Employee extends Person{
-    String office ;
-    String salary;
-    String dateHired ;
+    private Boolean office ;
+    private  Double salary;
+    private  String dateHired ;
+    public Boolean isOffice() {
+        return office;
+    }
+
+    /**
+     * @param office the office to set
+     */
+    public void setOffice(Boolean office) {
+        this.office = office;
+    }
+
+    /**
+     * @return Double return the salary
+     */
+    public Double getSalary() {
+        return salary;
+    }
+
+    /**
+     * @param salary the salary to set
+     */
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    /**
+     * @return String return the dateHired
+     */
+    public String getDateHired() {
+        return dateHired;
+    }
+
+    /**
+     * @param dateHired the dateHired to set
+     */
+    public void setDateHired(String dateHired) {
+        this.dateHired = dateHired;
+    }
+
 
     @Override
 public String toString() {
@@ -96,7 +143,17 @@ public String toString() {
 
 }
 class Staff extends Employee{
-    String title;
+   private String title;
+   public String getTitle() {
+    return title;
+}
+
+/**
+ * @param title the title to set
+ */
+public void setTitle(String title) {
+    this.title = title;
+}
     @Override
 public String toString() {
     
@@ -106,31 +163,74 @@ public String toString() {
 
 }
 class Faculty extends Employee{
-    int hour;
-    String rank;
+    private  double hour;
+    private double rank;
+    
+    
+
+
+    /**
+     * @return double return the hour
+     */
+    public double getHour() {
+        return hour;
+    }
+
+    /**
+     * @param hour the hour to set
+     */
+    public void setHour(double hour) {
+        this.hour = hour;
+    }
+
+    /**
+     * @return double return the rank
+     */
+    public double getRank() {
+        return rank;
+    }
+
+    /**
+     * @param rank the rank to set
+     */
+    public void setRank(double rank) {
+        this.rank = rank;
+    }
     @Override
 public String toString() {
-    
-    return "This is Faculty class";
+
+    return "This is Faculty class ";
 }
     
 }
 class TestPerson {
 
     public static void main(String[] args) {
-
+        
         Person person=new Person();
         Faculty faculty=new Faculty();
         Staff staff=new Staff();
         Employee employee=new Employee();
-        Student student=new Student();
+        Student student=new Student("junior");
+        Student student2=new Student("Senior");
+        person.setName("Person1");
+
+        faculty.setEmail("abc@gmail.com");
+        faculty.setSalary(20000);
         System.out.println(person.toString());
+        System.out.println("Name: "+person.getName());
         System.out.println(faculty.toString());
+        System.out.println("Email: "+faculty.getEmail());
+        System.out.println("Salary: "+faculty.getSalary());
         System.out.println(staff.toString());
         System.out.println(employee.toString());
         System.out.println(student.toString());
+        System.out.println("Status of student1: "+student.getStatus());
+        System.out.println("Status of student2: "+student2.getStatus());
     }
 
-    
 
+
+    
+ 
 }
